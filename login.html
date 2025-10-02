@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- CSS -->
+<style>
+    /* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+/* DIV */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(225, 225, 225);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
+    gap: 1rem;
+}
+form {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+</style>
+
+<!-- HTML -->
+
+<body>
+    <section>
+        <div class="container">
+            <h2>Login Page</h2>
+            <span>Lorem ipsum dolor sit amet consectetur.</span>
+            <form action="">
+                <label for="username" >username:</label>
+                <input type="text" required placeholder="input your username" id="username">
+                <label for="password" >password:</label>
+                <input type="password" required placeholder="input your password"id="password">
+                <button type="submit">SIGN IN</button>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
