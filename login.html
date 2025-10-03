@@ -1,90 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<!-- CSS -->
-<style>
+  </head>
+  <!-- CSS -->
+  <style>
     /* Reset CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-html, body {
-  height: 100%;
-  font-family: sans-serif;
-  line-height: 1.5;
-}
+    html,
+    body {
+      height: 100%;
+      font-family: sans-serif;
+      line-height: 1.5;
+    }
 
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
 
-input, button, textarea, select {
-  font: inherit;
-}
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-ul, ol {
-  list-style: none;
-}
-/* DIV */
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: rgb(225, 225, 225);
-}
+    ul,
+    ol {
+      list-style: none;
+    }
+    /* DIV */
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url("https://t4.ftcdn.net/jpg/05/03/87/35/360_F_503873538_dKJiRRgdNdiH9HJrnqvTpqDyN28RzZ4M.jpg");
+      background-size: cover;
+      background-position: center;
+    }
 
-.container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 2rem;
-    border-radius: 12px;
-    background-color: rgb(255, 255, 255);
-    gap: 1rem;
-}
-form {
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      padding: 2rem;
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.2); /* putih transparan */
+      backdrop-filter: blur(10px); /* efek blur */
+      gap: 0.8rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* biar input + button center */
+      gap: 1rem;
+    }
 
-</style>
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* label rata kiri */
+      width: 250px; /* kasih lebar biar konsisten */
+    }
 
-<!-- HTML -->
+    label {
+      font-size: 14px;
+    }
 
-<body>
+    button {
+      background: linear-gradient(135deg, #0d47a1, #1976d2); /* navy → biru */
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    /* Hover effect */
+    button:hover {
+      background: linear-gradient(135deg, #1565c0, #1e88e5); /* lebih terang */
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Focus/Active */
+    button:focus {
+      outline: none;
+      box-shadow: 0 0 10px 2px rgba(30, 136, 229, 0.6); /* glow biru */
+      transform: scale(1.02);
+    }
+
+    input {
+      width: 250px;
+      padding: 10px 14px;
+      margin: 8px 0;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: all 0.3s ease-in-out;
+      outline: none;
+      background: #fdfdfd;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Saat focus */
+    input:focus {
+      border-color: #1976d2; /* biru elegan */
+      box-shadow: 0 0 8px #1976d2, 0 0 4px rgba(25, 118, 210, 0.6);
+      background: #fff; /* lebih terang */
+      transform: scale(1.02); /* sedikit membesar */
+    }
+
+    p,
+    span,
+    label,
+    h2 {
+      color: #222;
+    }
+  </style>
+
+  <!-- HTML -->
+
+  <body>
     <section>
-        <div class="container">
-            <h2>Login Page</h2>
-            <span>Lorem ipsum dolor sit amet consectetur.</span>
-            <form action="">
-                <label for="username" >username:</label>
-                <input type="text" required placeholder="input your username" id="username">
-                <label for="password" >password:</label>
-                <input type="password" required placeholder="input your password"id="password">
-                <button type="submit">SIGN IN</button>
-            </form>
-        </div>
+      <div class="container">
+        <h2>Login Page</h2>
+        <span>Log in to start your session.</span>
+        <form>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Input Your Username" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Input Your Password"/>
+          </div>
+
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
     </section>
-    <script src="script.js"></script>
-</body>
+    <script src="src/index.js"></script>
+  </body>
 </html>

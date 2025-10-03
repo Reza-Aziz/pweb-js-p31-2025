@@ -1,0 +1,23 @@
+{
+  "name": "pweb-js-p31-2025",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reza-Aziz/pweb-js-p31-2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Reza-Aziz/pweb-js-p31-2025/issues"
+  },
+  "homepage": "https://github.com/Reza-Aziz/pweb-js-p31-2025#readme",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
