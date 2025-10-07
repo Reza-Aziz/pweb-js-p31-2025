@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Resep Lezat</title>
-    <meta name="description" content="Katalog resep dengan pencarian, filter, dan navigasi Show More." />
+    <title>Lezatto</title>
+    <meta name="description" content="Recipe catalog with search, filters, and Show More navigation." />
     <link rel="stylesheet" href="recipes.css" />
   </head>
   <body>
@@ -13,19 +13,19 @@
       <div class="container header-inner">
         <a class="brand" href="#" aria-label="Beranda Resep Lezat">
           <span class="brand-dot" aria-hidden="true"></span>
-          <span class="brand-text text-balance">Resep Lezat</span>
+          <span class="brand-text text-balance">Lezatto</span>
         </a>
 
         <div class="controls">
-          <label class="sr-only" for="search">Cari resep</label>
-          <input id="search" class="input" type="search" placeholder="Cari nama, cuisine, bahan, atau tag..." autocomplete="off" />
+          <label class="sr-only" for="search"></label>
+          <input id="search" class="input" type="search" placeholder="Search name, cuisine, ingredient, or tag..." autocomplete="off" />
 
-          <label class="sr-only" for="cuisine">Filter cuisine</label>
-          <select id="cuisine" class="select" aria-label="Filter berdasarkan cuisine">
-            <option value="__ALL__">Semua cuisine</option>
+          <label class="sr-only" for="cuisine"></label>
+          <select id="cuisine" class="select" aria-label="Filter by cuisine">
+            <option value="__ALL__">All cuisines</option>
           </select>
 
-          <button id="logout" class="btn btn-ghost" type="button" aria-label="Keluar">Logout</button>
+          <button id="logout" class="btn btn-ghost" type="button" aria-label="Logout">Logout</button>
         </div>
       </div>
     </header>
@@ -33,7 +33,7 @@
     <!-- Main Content Section -->
     <main class="container">
       <section aria-live="polite" aria-atomic="true" class="messages">
-        <p id="message" class="message hidden"></p>
+          <p id="message" class="message hidden"></p>
       </section>
 
       <section>
@@ -41,7 +41,7 @@
 
         <div class="grid-footer">
           <button id="showMore" class="btn" type="button">Show More</button>
-          <p id="endMessage" class="end-message hidden">Semua resep sudah ditampilkan</p>
+          <p id="endMessage" class="end-message hidden">All recipes shown</p>
         </div>
       </section>
     </main>
@@ -50,7 +50,7 @@
     <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal-backdrop" data-close="true"></div>
       <div class="modal-card">
-        <button class="modal-close" type="button" aria-label="Tutup" data-close="true">&times;</button>
+        <button class="modal-close" type="button" aria-label="Close" data-close="true">&times;</button>
         <img id="modalImage" alt="" class="modal-image" />
         <div class="modal-body">
           <h2 id="modalTitle" class="modal-title"></h2>
@@ -60,9 +60,9 @@
             <span id="modalCuisine"></span>
             <span id="modalRating"></span>
           </div>
-          <h3 class="section-title">Bahan</h3>
+          <h3 class="section-title">Ingredients</h3>
           <ul id="modalIngredients" class="list"></ul>
-          <h3 class="section-title">Langkah</h3>
+          <h3 class="section-title">Steps</h3>
           <ol id="modalSteps" class="list number"></ol>
           <div id="modalTags" class="tags"></div>
         </div>
