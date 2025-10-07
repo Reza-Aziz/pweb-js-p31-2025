@@ -216,3 +216,8 @@ document.getElementById('search').addEventListener('input', function() {
     displayRecipes(filteredRecipes);
   }, 300);  // Delay 300ms sebelum pencarian dimulai
 });
+
+// 🔹 Tambahan: Tombol Logout
+document.getElementById("logout").addEventListener("click", () => {
+  window.location.href = "login.html";
+});

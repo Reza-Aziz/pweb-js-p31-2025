@@ -7,25 +7,29 @@
     <meta name="description" content="Recipe catalog with search, filters, and Show More navigation." />
     <link rel="stylesheet" href="recipes.css" />
   </head>
+
   <body>
     <!-- Header Section -->
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="#" aria-label="Beranda Resep Lezat">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <span class="brand-text text-balance">Lezatto</span>
+          <span class="brand-text">Lezatto</span>
         </a>
 
         <div class="controls">
-          <label class="sr-only" for="search"></label>
-          <input id="search" class="input" type="search" placeholder="Search name, cuisine, ingredient, or tag..." autocomplete="off" />
-
-          <label class="sr-only" for="cuisine"></label>
+          <input
+            id="search"
+            class="input"
+            type="search"
+            placeholder="Search name, cuisine, ingredient, or tag..."
+            autocomplete="off"
+          />
           <select id="cuisine" class="select" aria-label="Filter by cuisine">
             <option value="__ALL__">All cuisines</option>
           </select>
-
-          <button id="logout" class="btn btn-ghost" type="button" aria-label="Logout">Logout</button>
+          <button id="logout" class="btn" type="button" aria-label="Logout">
+            Logout
+          </button>
         </div>
       </div>
     </header>
@@ -33,11 +37,13 @@
     <!-- Main Content Section -->
     <main class="container">
       <section aria-live="polite" aria-atomic="true" class="messages">
-          <p id="message" class="message hidden"></p>
+        <p id="message" class="message hidden"></p>
       </section>
 
       <section>
-        <div id="grid" class="grid"></div>
+        <div id="grid" class="grid">
+          <!-- Cards akan di-load lewat JS -->
+        </div>
 
         <div class="grid-footer">
           <button id="showMore" class="btn" type="button">Show More</button>
@@ -70,5 +76,13 @@
     </div>
 
     <script src="recipes.js" defer></script>
+
+    <!-- Efek Parallax -->
+    <script>
+      window.addEventListener("scroll", function () {
+        const scroll = window.scrollY;
+        document.body.style.backgroundPositionY = -(scroll * 0.3) + "px";
+      });
+    </script>
   </body>
 </html>

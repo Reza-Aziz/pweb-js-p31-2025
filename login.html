@@ -46,13 +46,14 @@
     ol {
       list-style: none;
     }
+
     /* DIV */
     section {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url("https://t4.ftcdn.net/jpg/05/03/87/35/360_F_503873538_dKJiRRgdNdiH9HJrnqvTpqDyN28RzZ4M.jpg");
+      background-image: url("https://pbs.twimg.com/media/GbOwYGIaoAAoXGf?format=jpg&name=4096x4096");
       background-size: cover;
       background-position: center;
     }
@@ -66,30 +67,33 @@
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       padding: 2rem;
       border-radius: 12px;
-      background-color: rgba(255, 255, 255, 0.2); /* putih transparan */
-      backdrop-filter: blur(10px); /* efek blur */
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
       gap: 0.8rem;
     }
+
     form {
       display: flex;
       flex-direction: column;
-      align-items: center; /* biar input + button center */
+      align-items: center;
       gap: 1rem;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* label rata kiri */
-      width: 250px; /* kasih lebar biar konsisten */
+      align-items: flex-start;
+      width: 250px;
     }
 
     label {
       font-size: 14px;
+      font-weight: bold;
+      color: #fff;
     }
 
     button {
-      background: linear-gradient(135deg, #0d47a1, #1976d2); /* navy → biru */
+      background: linear-gradient(135deg, #0d47a1, #1976d2);
       color: #fff;
       font-weight: bold;
       padding: 10px 20px;
@@ -100,17 +104,15 @@
       transition: all 0.3s ease;
     }
 
-    /* Hover effect */
     button:hover {
-      background: linear-gradient(135deg, #1565c0, #1e88e5); /* lebih terang */
+      background: linear-gradient(135deg, #1565c0, #1e88e5);
       transform: scale(1.05);
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
     }
 
-    /* Focus/Active */
     button:focus {
       outline: none;
-      box-shadow: 0 0 10px 2px rgba(30, 136, 229, 0.6); /* glow biru */
+      box-shadow: 0 0 10px 2px rgba(30, 136, 229, 0.6);
       transform: scale(1.02);
     }
 
@@ -123,28 +125,37 @@
       font-size: 14px;
       transition: all 0.3s ease-in-out;
       outline: none;
-      background: #fdfdfd;
+      background: rgba(255, 255, 255, 0.8);
+      color: #000;
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    /* Saat focus */
     input:focus {
-      border-color: #1976d2; /* biru elegan */
+      border-color: #1976d2;
       box-shadow: 0 0 8px #1976d2, 0 0 4px rgba(25, 118, 210, 0.6);
-      background: #fff; /* lebih terang */
-      transform: scale(1.02); /* sedikit membesar */
+      background: #fff;
+      transform: scale(1.02);
     }
 
     p,
     span,
     label,
     h2 {
-      color: #222;
+      color: #fff; /* tetap putih */
+      font-weight: 700; /* lebih tebal */
+    }
+
+    span {
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.3rem;
     }
   </style>
 
   <!-- HTML -->
-
   <body>
     <section>
       <div class="container">
@@ -158,7 +169,11 @@
 
           <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Input Your Password"/>
+            <input
+              type="password"
+              id="password"
+              placeholder="Input Your Password"
+            />
           </div>
 
           <button type="submit">Sign In</button>

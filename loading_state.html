@@ -1,69 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lezatto | Loading</title>
     <style>
-           /* Reset CSS */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      /* RESET */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-html, body {
-  height: 100%;
-  font-family: sans-serif;
-  line-height: 1.5;
-}
+      html,
+      body {
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+      }
 
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
+      /* BACKGROUND */
+      body {
+        background-image: url("https://pbs.twimg.com/media/GbOwYGIaoAAoXGf?format=jpg&name=4096x4096");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-input, button, textarea, select {
-  font: inherit;
-}
+      /* GLASS CONTAINER */
+      .glass-box {
+        position: relative;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+        border-radius: 16px;
+        padding: 3rem 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 1.5s ease forwards;
+      }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+      /* LOGO TEXT */
+      h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 2px;
+      }
 
-ul, ol {
-  list-style: none;
-}
-        .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+      /* TEKS KECIL DI BAWAH LOGO */
+      p {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        color: #e3e3e3;
+        letter-spacing: 1px;
+        animation: fadeText 2s infinite alternate;
+      }
+
+      /* ANIMASI FADE TEKS */
+      @keyframes fadeText {
+        from {
+          opacity: 0.4;
         }
-     
-.loader {
-    display: flex;
-  width: 120px;
-  height: 20px;
-  background:
-   linear-gradient(#000 0 0) 0/0% no-repeat
-   #ddd;
-  animation: l1 2s infinite linear;
-}
-@keyframes l1 {
-    100% {background-size:100%}
-}
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* ANIMASI FADE MASUK */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* PROGRESS BAR */
+      .bar {
+        position: relative;
+        width: 180px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 1.8rem;
+      }
+
+      /* BAGIAN DALAM BAR (progress) */
+      .progress {
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(135deg, #0d47a1, #1976d2);
+        border-radius: 10px;
+        animation: load 5s linear forwards;
+        overflow: hidden;
+      }
+
+      /* CAHAYA MENYAPU DI ATAS BAR */
+      .progress::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -40%;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(255, 255, 255, 0.9),
+          transparent
+        );
+        animation: shine 2s infinite linear;
+      }
+
+      /* ANIMASI PROGRESS BAR */
+      @keyframes load {
+        to {
+          width: 100%;
+        }
+      }
+
+      /* ANIMASI CAHAYA MENYAPU */
+      @keyframes shine {
+        0% {
+          left: -40%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
     </style>
-    <div class="container">
-        <div class="loader"></div> 
+  </head>
+
+  <body>
+    <div class="glass-box">
+      <h1>Lezatto</h1>
+      <p>Preparing something delicious...</p>
+      <div class="bar">
+        <div class="progress"></div>
+      </div>
     </div>
-    <script >
-        setTimeout(() => {
-      window.location.href = "main.html";
-    }, 10000);
+
+    <script>
+      // Redirect otomatis ke recipes.html setelah 5 detik
+      setTimeout(() => {
+        window.location.href = "recipes.html";
+      }, 5000);
     </script>
-</body>
+  </body>
 </html>
