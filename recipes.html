@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resep Lezat</title>
+    <meta name="description" content="Katalog resep dengan pencarian, filter, dan navigasi Show More." />
+    <link rel="stylesheet" href="recipes.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="Beranda Resep Lezat">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span class="brand-text text-balance">Resep Lezat</span>
+        </a>
+
+        <div class="controls">
+          <label class="sr-only" for="search">Cari resep</label>
+          <input id="search" class="input" type="search" placeholder="Cari nama, cuisine, bahan, atau tag..." autocomplete="off" />
+
+          <label class="sr-only" for="cuisine">Filter cuisine</label>
+          <select id="cuisine" class="select" aria-label="Filter berdasarkan cuisine">
+            <option value="__ALL__">Semua cuisine</option>
+          </select>
+
+          <button id="logout" class="btn btn-ghost" type="button" aria-label="Keluar">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container">
+      <section aria-live="polite" aria-atomic="true" class="messages">
+        <p id="message" class="message hidden"></p>
+      </section>
+
+      <section>
+        <div id="grid" class="grid"></div>
+
+        <div class="grid-footer">
+          <button id="showMore" class="btn" type="button">Show More</button>
+          <p id="endMessage" class="end-message hidden">Semua resep sudah ditampilkan</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal detail resep -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-card">
+        <button class="modal-close" type="button" aria-label="Tutup" data-close="true">&times;</button>
+        <img id="modalImage" alt="" class="modal-image" />
+        <div class="modal-body">
+          <h2 id="modalTitle" class="modal-title"></h2>
+          <div class="meta">
+            <span id="modalTime"></span>
+            <span id="modalDifficulty"></span>
+            <span id="modalCuisine"></span>
+            <span id="modalRating"></span>
+          </div>
+          <h3 class="section-title">Bahan</h3>
+          <ul id="modalIngredients" class="list"></ul>
+          <h3 class="section-title">Langkah</h3>
+          <ol id="modalSteps" class="list number"></ol>
+          <div id="modalTags" class="tags"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="recipes.js" defer></script>
+  </body>
+</html>
