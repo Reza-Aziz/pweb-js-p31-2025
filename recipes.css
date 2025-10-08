@@ -50,6 +50,51 @@ body {
   align-items: center;
 }
 
+.brand-area {
+  display: flex;
+  align-items: center;
+}
+
+.controls-bar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  margin: 20px 0;
+}
+
+.controls-bar .input,
+.controls-bar .select {
+  flex: 1;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 20px;
+}
+
+.username {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.btn-logout {
+  background-color: #111;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.btn-logout:hover {
+  background-color: #222;
+}
+
 /* Input dan Select */
 input.input,
 select.select {

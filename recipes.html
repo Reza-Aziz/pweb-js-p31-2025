@@ -17,19 +17,11 @@
         </a>
 
         <div class="controls">
-          <input
-            id="search"
-            class="input"
-            type="search"
-            placeholder="Search name, cuisine, ingredient, or tag..."
-            autocomplete="off"
-          />
-          <select id="cuisine" class="select" aria-label="Filter by cuisine">
-            <option value="__ALL__">All cuisines</option>
-          </select>
-          <button id="logout" class="btn" type="button" aria-label="Logout">
-            Logout
-          </button>
+         
+          <div class="user-area">
+            <span id="usernameDisplay" class="username">Welcome, Guest!</span>
+            <button id="logout" class="btn btn-logout" type="button" aria-label="Logout">LOGOUT</button>
+          </div>
         </div>
       </div>
     </header>
@@ -40,9 +32,23 @@
         <p id="message" class="message hidden"></p>
       </section>
 
+      <!-- Controls bar above the cards -->
+      <section class="controls-bar">
+        <input
+          id="search"
+          class="input"
+          type="search"
+          placeholder="Search name, cuisine, ingredient, or tag..."
+          autocomplete="off"
+        />
+        <select id="cuisine" class="select" aria-label="Filter by cuisine">
+          <option value="__ALL__">All cuisines</option>
+        </select>
+      </section>
+
       <section>
         <div id="grid" class="grid">
-          <!-- Cards akan di-load lewat JS -->
+          <!-- Cards will be loaded by JS -->
         </div>
 
         <div class="grid-footer">

@@ -21,6 +21,32 @@ fetch('https://dummyjson.com/recipes')
     if (msg) msg.innerText = 'Error fetching data. Please try again later.';
   });
 
+// Populate username from localStorage into navbar
+function populateUsername() {
+  const username = localStorage.getItem('username') || 'Guest';
+  const el = document.getElementById('usernameDisplay');
+  if (el) el.innerText = `Welcome, ${username}!`;
+}
+
+// Logout behavior: clear auth and redirect to login
+function setupLogout() {
+  const btn = document.getElementById('logout');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    // clear token/username (adjust keys to match your auth flow)
+    localStorage.removeItem('username');
+    localStorage.removeItem('token');
+    // redirect to login page
+    window.location.href = 'login.html';
+  });
+}
+
+// run on load
+document.addEventListener('DOMContentLoaded', () => {
+  populateUsername();
+  setupLogout();
+});
+
 // Fungsi untuk menampilkan resep ke halaman
 function displayRecipes(recipes) {
   const grid = document.getElementById('grid');
