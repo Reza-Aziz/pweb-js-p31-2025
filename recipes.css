@@ -1,6 +1,6 @@
 /* Gaya dasar untuk halaman */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-image: url("https://pbs.twimg.com/media/G2qnrMKakAADgtz?format=jpg&name=large");
@@ -298,4 +298,124 @@ button#showMore {
 
 .hidden {
   display: none;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+  body {
+    background-attachment: scroll; /* Disable fixed background on tablet */
+    background-size: cover; /* Ensure background covers the viewport */
+  }
+  /* Additional tablet-specific adjustments (if needed) */
+}
+
+/* 📱 Tampilan khusus mobile (≤480px) */
+@media (max-width: 480px) {
+  /* ==== HEADER ==== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .site-header {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .brand-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .brand-text {
+    font-size: 1.3em;
+  }
+
+  .user-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+  }
+
+  .username {
+    font-size: 0.85rem;
+  }
+
+  .btn-logout {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  /* ==== CONTROL BAR ==== */
+  .controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .controls-bar input.input,
+  .controls-bar select.select {
+    width: 100%;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  /* ==== GRID & CARD ==== */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .recipe-card {
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  .recipe-name {
+    font-size: 1.1rem;
+  }
+
+  button.view-recipe {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  /* ==== MODAL ==== */
+  .modal-card {
+    width: 95%;
+    max-height: 85vh;
+    padding: 15px;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .modal-image {
+    max-height: 30vh;
+  }
 }
