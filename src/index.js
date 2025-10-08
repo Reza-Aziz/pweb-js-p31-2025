@@ -58,6 +58,14 @@ function checkLogin() {
     var password = document.getElementById("password").value;
     var user = userData.find(function (u) { return u.username === username && u.password === password; });
     if (user) {
+        // save username to localStorage so other pages can show the logged-in user
+        try {
+            localStorage.setItem('username', user.username);
+            // optionally store user id/token; here we store id for simple persistence
+            localStorage.setItem('userId', String(user.id));
+        } catch (e) {
+            console.warn('Could not write to localStorage', e);
+        }
         window.location.href = "loading_state.html";
     }
     else {
